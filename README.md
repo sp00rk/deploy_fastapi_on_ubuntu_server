@@ -4,11 +4,11 @@
 *  run updates & install pip and venv
 
 ```bash
-sudo apt-get updates
+sudo apt-get update
 sudo apt-get upgrade
 
-sudo apt-get -y install pyhton3-pip
-sudo apt-get -y install pyhton3-venv
+sudo apt-get -y install python3-pip
+sudo apt-get -y install python3-venv
 ```
 
 * clone repo, create / activate virtual environment & install reqs
@@ -18,9 +18,16 @@ git clone https://github.com/username/repo_name
 cd repo_name
 python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt
-# replace username and repo_bame with real values for your repository
 ```
+
+pip install gunicorn uvicorn
+
+/var/tiles/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000
+
+Install all packages as requested
+
+
+
 
 * Install nginx
 
@@ -31,7 +38,7 @@ sudo apt-get -y install nginx
 * update nginx configuration to proxy to localhost
 
 ```bash
-sudo nano /etc/nginx/sites-available/default
+sudo vi /etc/nginx/sites-available/default
 
 ```
 
@@ -64,17 +71,17 @@ location / {
 ```bash
 sudo systemctl restart nginx
 
-uvicorn filename:app
-# replace filename with your fastapi file name
-```
+uvicorn main:app
 
-* confirm if the web server is listening in public ip address and then stop the uvicorn server
+```
+* confirm you can open the root of the site via the IP address
+  
 
 * create service for project
 note - remove {} and change the contents in {} to your values
 
 ```bash
-sudo nano /etc/systemd/system/{project_name}.service
+sudo vi /etc/systemd/system/{project_name}.service
 ```
 
 my example 
