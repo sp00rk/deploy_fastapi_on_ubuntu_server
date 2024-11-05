@@ -61,12 +61,7 @@ location / {
 }
 ```
 
-* save and exit the file
-    - ctrl x
-    - Y
-    - Enter
-
-* Restart nginx and run your server
+* Restart nginx
 
 ```bash
 sudo systemctl restart nginx
@@ -81,63 +76,40 @@ uvicorn main:app
 note - remove {} and change the contents in {} to your values
 
 ```bash
-sudo vi /etc/systemd/system/{project_name}.service
+sudo vi /etc/systemd/system/tiles.service
 ```
 
-my example 
-```bash
-sudo nano /etc/systemd/system/caesar.service
-```
-
-* paste the following snipet
-note - remove {} and change the contents in {} to your values
+* paste the following
 
 ```
 [Unit]
 Description=Gunicorn instance to serve MyApp
-After=network.target
 
 [Service]
 User=ubuntu
-Group=www-data
-WorkingDirectory={absolute path to your repo directory}
-Environment="PATH={absolute path to your repo directory}/venv/bin"
-ExecStart={absolute path to your repo directory}/venv/bin/gunicorn app:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
+WorkingDirectory=/var/tiles
+Environment="PATH=var/tiles/venv/bin"
+ExecStart=/var/tiles/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000
+Restart=always
 
 [Install]
 WantedBy=multi-user.target
 ```
-
-#### my example 
-
-```
-[Unit]
-Description=Gunicorn instance to serve MyApp
-After=network.target
-
-[Service]
-User=ubuntu
-Group=www-data
-WorkingDirectory=/home/ubuntu/caesar
-Environment="PATH=/home/ubuntu/caesar/venv/bin"
-ExecStart=/home/ubuntu/caesar/venv/bin/gunicorn app:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-save and exit the file (ctrl + x, y, Enter)
 
 * start the service 
-note - replace project_name with the name of your project
 ```bash
-systemctl daemon-reload
-sudo systemctl start project_name
-sudo systemctl enable project_name
+sudo systemctl daemon-reload
+sudo systemctl start tiles.service
+sudo systemctl enable tiles.service
+
+
+sudo apt install python3-certbot-nginx
+
+sudo certbot --nginx -d gptrando.fr
+sudo certbot --nginx -d tiles1.gptrando.fr
 
 # to stop the server
-sudo systemctl stop project_name
+sudo systemctl stop tiles.service
 ```
 
 * Done.
