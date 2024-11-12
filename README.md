@@ -26,11 +26,13 @@ pip install gunicorn uvicorn
 /var/tiles/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000
 
 Install all packages as requested
+```bash
 pip install fastapi
 pip install numpy 
 pip install pillow
 pip install httpx
 pip install diskcache
+```
 
 * Install nginx
 
