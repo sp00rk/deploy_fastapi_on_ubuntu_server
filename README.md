@@ -18,6 +18,7 @@ git clone https://github.com/username/repo_name
 cd repo_name
 python3 -m venv venv
 source venv/bin/activate
+sudo chmod -R a+rwx venv
 ```
 
 pip install gunicorn uvicorn
