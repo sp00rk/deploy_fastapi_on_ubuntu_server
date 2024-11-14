@@ -85,6 +85,7 @@ sudo vi /etc/systemd/system/tiles.service
 ```
 
 * paste the following
+* NB! Make sure username is correct
 
 ```
 [Unit]
