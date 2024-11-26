@@ -111,8 +111,8 @@ sudo systemctl enable tiles.service
 
 sudo apt install python3-certbot-nginx
 
-sudo certbot --nginx -d gptrando.fr
-sudo certbot --nginx -d tiles1.gptrando.fr
+sudo certbot --nginx -d {domain}
+sudo certbot --nginx -d {subdomain}.{domain}.fr
 
 # to stop the server
 sudo systemctl stop tiles.service
