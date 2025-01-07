@@ -32,6 +32,13 @@ pip install numpy
 pip install pillow
 pip install httpx
 pip install diskcache
+pip install sqlalchemy
+pip install shapely
+pip install geoalchemy2
+pip install asyncpg
+pip install requests
+pip install scipy
+pip install mercantile
 ```
 
 * Install nginx
