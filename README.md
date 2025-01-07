@@ -99,7 +99,7 @@ sudo vi /etc/systemd/system/tiles.service
 Description=Gunicorn instance to serve MyApp
 
 [Service]
-User=ubuntu
+User=root
 WorkingDirectory=/var/tiles
 Environment="PATH=var/tiles/venv/bin"
 ExecStart=/var/tiles/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000
