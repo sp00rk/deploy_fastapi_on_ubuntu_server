@@ -39,6 +39,7 @@ pip install asyncpg
 pip install requests
 pip install scipy
 pip install mercantile
+pip install python-dotenv 
 ```
 
 * Install nginx
