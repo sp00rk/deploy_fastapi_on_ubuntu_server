@@ -39,7 +39,8 @@ pip install asyncpg
 pip install requests
 pip install scipy
 pip install mercantile
-pip install python-dotenv 
+pip install python-dotenv
+pip install firebase_auth
 ```
 
 * Install nginx
