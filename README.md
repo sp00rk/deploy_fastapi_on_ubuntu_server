@@ -40,7 +40,7 @@ pip install requests
 pip install scipy
 pip install mercantile
 pip install python-dotenv
-pip install firebase_auth
+pip install firebase-admin
 ```
 
 * Install nginx
