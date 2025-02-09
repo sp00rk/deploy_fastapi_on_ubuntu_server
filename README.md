@@ -40,6 +40,7 @@ pip install requests
 pip install scipy
 pip install mercantile
 pip install python-dotenv
+pip install python-multipart
 pip install firebase-admin
 ```
 
