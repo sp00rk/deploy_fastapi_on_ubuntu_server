@@ -43,6 +43,7 @@ pip install python-dotenv
 pip install python-multipart
 pip install firebase-admin
 pip install scikit-image
+pip install pywavelets 
 ```
 
 * Install nginx
