@@ -43,10 +43,6 @@ pip install python-dotenv
 pip install python-multipart
 pip install firebase-admin
 pip install scikit-image
-pip install pywavelets
-pip install cv2
-
-apt-get update && apt-get install libgl1
 ```
 
 * Install nginx
