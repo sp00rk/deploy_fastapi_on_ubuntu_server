@@ -44,6 +44,13 @@ pip install python-multipart
 pip install firebase-admin
 pip install scikit-image
 pip install mapbox_vector_tile
+pip install matplotlib
+pip install opencv-python
+pip install pyproj
+pip install rasterio
+
+sudo apt-get update
+sudo apt-get install -y libgl1 libglib2.0-0
 ```
 
 * Install nginx
